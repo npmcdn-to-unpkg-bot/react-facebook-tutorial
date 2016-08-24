@@ -1,3 +1,18 @@
+// tutorial 1
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+    // tutorial 3
+      <div className="commentBox">
+        <h1>Comments</h1>
+        <CommentList />
+        <CommentForm />
+      </div>
+    );
+  }
+});
+
+// tutorial 2
 var CommentList = React.createClass({
   render: function() {
     return (
@@ -17,3 +32,8 @@ var CommentForm = React.createClass({
     );
   }
 });
+
+ReactDOM.render(
+  <CommentBox />,
+  document.getElementById('content')
+);
