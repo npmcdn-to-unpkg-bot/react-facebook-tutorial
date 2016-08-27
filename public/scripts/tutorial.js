@@ -38,15 +38,20 @@ var CommentForm = React.createClass({
 // tutorial 4
 // Comment is child of CommentList
 var Comment = React.createClass({
-  render: function() {
-    // tutorial 6 (add Markdown)
+  // tutorial 6/7 (add Markdown)
+  rawMarkup: function() {
     var md = new Remarkable();
+    var rawMarkup = md.render(this.props.children.toString());
+    return { __html: rawMarkup };
+  },
+
+  render: function() {
     return(
       <div className="comment">
         <h2 className="commentAuthor">
           {this.props.author}
         </h2>
-        {md.render(this.props.children.toString())}
+        <span dangerouslySetInnerHTML={this.rawMarkup()} />
       </div>
     );
   }
