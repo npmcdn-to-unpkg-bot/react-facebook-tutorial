@@ -72,6 +72,6 @@ var data = [
 
 // tutorial 11
 ReactDOM.render(
-  <CommentBox data={data} />,
+  <CommentBox url="/api/comments" />,
   document.getElementById('content')
 );
